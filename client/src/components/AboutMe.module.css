@@ -1,0 +1,14 @@
+.monicaImg {
+    width: 100%;
+    transform: scaleX(-1);
+}
+
+.textContainer {
+    font-size: 18px;
+}
+
+@media (max-width: 992px) {
+    .monicaImg {
+        width: 60%;
+    }
+}
