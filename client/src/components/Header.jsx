@@ -14,10 +14,10 @@ export function Header() {
                 </Link>
 
                 <ul className="nav nav-pills">
-                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">START HERE</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">MY STORY</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">SESSIONS WITH ME</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">CONTACT ME</Link></li>
+                    {/* <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">PRADĖK DABAR</Link></li> */}
+                    <li className="nav-item"><Link to="/apie-mane" className="nav-link text-body-secondary">APIE MANE</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">PRODUKTAI</Link></li>
+                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">SUSISIEKTI</Link></li>
                 </ul>
             </header>
         </div>

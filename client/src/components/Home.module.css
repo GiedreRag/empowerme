@@ -41,33 +41,38 @@
     align-items: center;
 }
 
+.mainTitle {
+    font-size: 36px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
 .bubblesContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 10px;
 }
 
 .bubble1 {
-    background-color: #799779;
+    background-color: #4a4846;
     border-radius: 3% 40%;
-    padding: 40px;
+    padding: 30px 40px;
     margin: 30px;
     animation: fadeEffect1 8s infinite 24s;
 }
 
 .bubble2 {
-    background-color: #799779;
+    background-color: #4a4846;
     border-radius: 3% 40%;
-    padding: 40px;
+    padding: 30px 40px;
     margin: 30px;
     animation: fadeEffect2 8s infinite 24s;
 }
 
 .bubble3 {
-    background-color: #799779;
+    background-color: #4a4846;
     border-radius: 3% 40%;
-    padding: 40px;
+    padding: 30px 40px;
     margin: 30px;
     animation: fadeEffect3 8s infinite 24s;
 }
@@ -75,10 +80,17 @@
 .info {
     color: white;
     font-size: 18px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sentence {
+    font-size: 20px;
 }
 
 .monicaImage {
-    width: 100%;
+    width: 120%;
+    margin-top: -30px;
 }
 
 @keyframes fadeEffect1 {
@@ -124,61 +136,106 @@
     }
 
     .monicaImage {
-        width: 120%;
+        width: 130%;
+        margin-top: -40px;
     }
 }
 
 @media (max-width: 1199px) {
     .monicaImage {
-        width: 140%;
+        width: 160%;
+        margin-top: -160px;
     }
 }
 
 @media (max-width: 992px) {
     .backgroundImage {
-        visibility: hidden;
+        width: 30%;
+        left: 70%;
+        /* visibility: hidden; */
     }
 
-    .backgroundImage2 {
+    /* .backgroundImage2 {
         visibility: hidden;
-    }
+    } */
 
     .backgroundDots {
         visibility: visible;
-        width: 200%;
+        width: 190%;
+    }
+
+    .textContainer {
+        margin-bottom: -12%;
     }
 
     .monicaImage {
-        width: 90%;
+        width: 80%;
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 768px) {
     .backgroundDots {
-        width: 150%;
+        width: 140%;
+    }
+    .mainTitle {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+    .backgroundDots {
+        width: 130%;
+    }
+    .bubble1 {
+        padding: 20px 30px;
+    }
+    .bubble2 {
+        padding: 20px 30px;
+    }
+    .bubble3 {
+        padding: 20px 30px;
+    }
+    .mainTitle {
+        font-size: 25px;
+    }
+    .info {
+        font-size: 16px;
+    }
+
+    .sentence {
+        font-size: 18px;
+        margin: 40px;
     }
 }
 
 @media (max-width: 515px) {
     .backgroundDots {
-        width: 140%;
+        width: 130%;
+    }
+    .sentence {
+        font-size: 16px;
     }
 }
 
 @media (max-width: 490px) {
     .backgroundDots {
-        width: 130%;
+        width: 120%;
     }
 }
 
 @media (max-width: 445px) {
     .backgroundDots {
-        width: 120%;
+        width: 110%;
     }
 }
 
 @media (max-width: 410px) {
     .backgroundDots {
-        width: 100%;
+        width: 90%;
+    }
+
+    .sentence {
+        margin: 30px;
     }
 }

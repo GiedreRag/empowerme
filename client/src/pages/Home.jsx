@@ -4,6 +4,7 @@ import style2 from '../components/Button.module.css';
 import backgroundImage from '../assets/bcg-img-big.png';
 import backgroundImage2 from '../assets/bcg2-img-big.png';
 import backgroundDots from '../assets/bcg-img-small.png';
+import monicaHomeImg from '../assets/monica-home-img.png';
 
 export function Home() {
     return (
@@ -12,33 +13,33 @@ export function Home() {
             <img src={backgroundImage2} alt="background" className={style.backgroundImage2} />
             <div className="row">
                 <div className={`col-md-12 col-lg-8 ${style.textContainer}`}>
-                    <h4 className="display-6 text-center" style={{ margin: '10% 30px 0', fontSize: '2em' }}>
-                        Are You Future Leader Who Wants
+                    <h4 className={`mt-5 display-6 text-center fst-italic ${style.mainTitle}`}>
+                        Sveiki sugrįžę namo
                     </h4>
                     <div className={style.bubblesContainer}>
                         <div className={style.bubble1}>
-                            <span className={style.info}>Find Your Purpose</span>
+                            <span className={style.info}>geros savijautos</span>
                         </div>
                         <div className={style.bubble2}>
-                            <span className={style.info}>Performance</span>
+                            <span className={style.info}>energijos</span>
                         </div>
                         <div className={style.bubble3}>
-                            <span className={style.info}>Emotional Freedom</span>
+                            <span className={style.info}>harmonijos</span>
                         </div>
                     </div>
-                    <button className={`mt-5 mb-3 ${style2.button}`}>BEGIN YOUR JOURNEY</button>
-                    <h6 className="mt-5 text-center">"You have power within to change your emotions, thoughts, decisions and life"</h6>
-                    <p className="mt-1">Monica Empower</p>
+                    <h4 className={`display-6 mt-2 mb-4 text-center fst-italic ${style.mainTitle}`}>ieškotojai.</h4>
+                    <button className={`mt-5 mb-4 ${style2.button}`}>PRADĖK SAVO KELIONĘ</button>
+                    <h4 className={`mt-5 mb-4 fw-light lh-base text-center ${style.sentence}`}>"Atsikratyk pykčio ir skausmingų prisiminimų visiems laikams greitai ir neskausmingai, jog atrastum gerą savijautą ir turėtum daugiau energijos daryti tai kas svarbu gyvenime!"</h4>
+                    <p className="mt-1 fst-italic">Monica Empower</p>
                 </div>
                 <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center ${style.imageContainer}`}>
                     <div className={style.backgroundDotsContainer}>
                         <img src={backgroundDots} alt="background dots" className={style.backgroundDots} />
                     </div>
                     <img 
-                        src="https://media.canva.com/1/image-resize/1/1601_2400_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9JU2JWdy9NQUVfQmVJU2JWdy8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAD9pb-z-63qKUx0iqJnNMJGkBlumlBqOS3MPkzLPcKDs&amp;exp=1704200027&amp;x-canva-quality=screen_3x&amp;csig=AAAAAAAAAAAAAAAAAAAAAOkWS-uWsmV1dB0eete2iDe3DYH4Hl70sVUFVZgANpNP" 
+                        src={monicaHomeImg}
                         alt="Monica"
                         className={style.monicaImage}
-                        // style={{ maxWidth: '100%', height: 'auto', margin: '0 auto' }}
                     />
                 </div>
             </div>
