@@ -35,7 +35,7 @@ export function ContactMe() {
         } 
 
         for (const word of nameWords) {
-            if (word[0] !== word[0].toUpperCase()) {
+            if (word && word[0] !== word[0].toUpperCase()) {
                 return false;
             }
         }
@@ -51,7 +51,7 @@ export function ContactMe() {
         setNameErr(`Vardas turi susidėti iš vieno, dviejų ar trijų zodziu, kurių kiekvienas prasideda didžiąją raide. Galima naudoti tik raides.`);
         setNameValid(false);
         } else if (name.length < minNameSize) {
-            setNameErr(`Privaloma mažiausiai ${minNameSize} simbolis.`);
+            setNameErr(`Privaloma mažiausiai ${minNameSize} simboliai.`);
             setNameValid(false);
         } else if (name.length > maxNameSize) {
             setNameErr(`Leidžiama daugiausiai ${maxNameSize} simbolių.`);
