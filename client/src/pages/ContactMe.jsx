@@ -1,34 +1,255 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import monicaContactImg from '../assets/monica-contact-img.png';
 import style from '../components/ContactMe.module.css';
 import { FaPhone, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export function ContactMe() {
+    const navigate = useNavigate();
+    const [name, setName] = useState('');
+    const [nameErr, setNameErr] = useState('');
+    const [nameValid, setNameValid] = useState(false);
+    const [email, setEmail] = useState('');
+    const [emailErr, setEmailErr] = useState('');
+    const [emailValid, setEmailValid] = useState(false);
+    const [message, setMessage] = useState('');
+    const [messageErr, setMessageErr] = useState('');
+    const [messageValid, setMessageValid] = useState(false);
+
+    function updateName(e) {
+        setName(e.target.value);
+    }
+
+    function updateEmail(e) {
+        setEmail(e.target.value);
+    }
+
+    function updateMessage(e) {
+        setMessage(e.target.value);
+    }
+
+    function isValidNameFormat(name) {
+        const nameWords = name.split(' ');
+        if (nameWords.length < 1 || nameWords.length > 3) {
+            return false;
+        } 
+
+        for (const word of nameWords) {
+            if (word[0] !== word[0].toUpperCase()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function isValidName() {
+        const minNameSize = 2;
+        const maxNameSize = 60;
+
+        if (!isValidNameFormat(name)) {
+        setNameErr(`Vardas turi susidėti iš vieno, dviejų ar trijų zodziu, kurių kiekvienas prasideda didžiąją raide. Galima naudoti tik raides.`);
+        setNameValid(false);
+        } else if (name.length < minNameSize) {
+            setNameErr(`Privaloma mažiausiai ${minNameSize} simbolis.`);
+            setNameValid(false);
+        } else if (name.length > maxNameSize) {
+            setNameErr(`Leidžiama daugiausiai ${maxNameSize} simbolių.`);
+            setNameValid(false);
+        } else {
+            setNameErr(false);
+            setNameValid(true);
+        }
+    }
+
+    function isValidEmail() {
+        const minEmailSize = 6;
+        const maxEmailSize = 100;
+        const atSymbol = email.indexOf('@');
+        const dotSymbol = email.lastIndexOf('.');
+        const atSymbolCount = email.split('@').length - 1;
+        const topLevelDomain = email.slice(dotSymbol + 1);
+
+        if (email.length < minEmailSize) {
+            setEmailErr(`Privaloma mažiausiai ${minEmailSize} simboliai.`);
+            setEmailValid(false);
+        } else if (email.length > maxEmailSize) {
+            setEmailErr(`Leidžiama daugiausiai ${maxEmailSize} simbolių.`);
+            setEmailValid(false);
+        } else if (!email.includes('@')) {
+            setEmailErr(`Trūksta "@" simbolio.`);
+            setEmailValid(false);
+        } else if (atSymbolCount > 1) {
+            setEmailErr(`Leidžiamas tik 1 "@" simbolis.`);
+            setEmailValid(false);
+        } else if (atSymbol > dotSymbol - 3 || dotSymbol === -1) {
+            setEmailErr(`Netinkamas email formatas, pavyzdys: example@example.com`);
+            setEmailValid(false);
+        } else if (topLevelDomain.length < 2 || topLevelDomain.length > 4) {
+            setEmailErr(`Netinkamas top-level domain.`);
+            setEmailValid(false);
+        } else {
+            setEmailErr(false);
+            setEmailValid(true);
+        }
+    }
+
+    function isValidMessage() {
+        const minMessageSize = 2;
+        const maxMessageSize = 500;
+
+        if (message.length < minMessageSize) {
+            setMessageErr(`Privaloma mažiausiai ${minMessageSize} simboliai.`);
+            setMessageValid(false);
+        } else if (message.length > maxMessageSize) {
+            setMessageErr(`Leidžiama daugiausiai ${maxMessageSize} simbolių.`);
+            setMessageValid(false);
+        } else {
+            setMessageErr(false);
+            setMessageValid(true);
+        }
+    }
+
+    function submitHandler(e) {
+        e.preventDefault();
+
+        if (name && email && message) {
+            fetch('http://localhost:3001/api/submission', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    name, 
+                    email, 
+                    message }),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'err-list') {
+                        for (const item of data.errors) {
+                            if (item.input === 'name') {
+                                setNameErr(item.msg);
+                            }
+                            if (item.input === 'email') {
+                                setEmailErr(item.msg);
+                            }
+                            if (item.input === 'message') {
+                                setMessageErr(item.msg);
+                            }
+                        }
+                    }
+                    if (data.status === 'ok') {
+                        return navigate('/');
+                    }
+                })
+                .catch(err => console.error(err));
+        } 
+    }
+
     return (
         <div className="container">
             <div className="row">
                 <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center`}>
                     <img src={monicaContactImg} alt="Monica" className={style.monicaImg}/>
                 </div>
-                <div className={`col-md-12 col-lg-8 mt-5 ${style.textContainer}`}>
-                    <h2>Susisiek su manimi</h2>
+                <div className={`col-md-12 col-lg-8 mt-2 ${style.textContainer}`}>
+                    <h3>Susisiek su manimi</h3>
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaPhone /></i>
-                        <p>+44 7000 200000</p>
+                        <p>+44 7000 20000</p>
                     </div>
-                    {/* <div className="d-flex mt-3">
-                        <i className="me-2"><FaEnvelope /></i>
-                        <p>xxx@xxx.co.uk</p>
-                    </div> */}
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaFacebook /></i>
                         <p>Monica Empower</p>
                     </div>
                     <div className="d-flex mt-3">
-                        <i className="me-2"><FaInstagram /></i>
+                        <i className="me-2 mb-5"><FaInstagram /></i>
                         <p>Monica Empower</p>
                     </div>
+                    <h5>Arba parašyk žinutę apačioje</h5>
+                    <form onSubmit={submitHandler}>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Vardas</label>
+                            <input 
+                                type="text"
+                                className={`form-control ${nameErr ? 'is-invalid' : ''} ${nameValid ? 'is-valid' : ''}`}
+                                onBlur={isValidName}
+                                id="name"
+                                name="name"
+                                value={name}
+                                onChange={updateName}
+                                required
+                            />
+                            <div className="invalid-feedback">{nameErr}</div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label"> El. paštas</label>
+                            <input 
+                                type="email"
+                                className={`form-control ${emailErr ? 'is-invalid' : ''} ${emailValid ? 'is-valid' : ''}`}
+                                id="email"
+                                name="email"
+                                value={email}
+                                onChange={updateEmail}
+                                onBlur={isValidEmail}
+                                required 
+                            />
+                            <div className="invalid-feedback">{emailErr}</div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="message" className="form-label">Žinutė</label>
+                            <textarea 
+                                className={`form-control ${messageErr ? 'is-invalid' : ''} ${messageValid ? 'is-valid' : ''}`}
+                                id="message"
+                                name="message"
+                                value={message}
+                                onChange={updateMessage}
+                                onBlur={isValidMessage}
+                                required
+                            />
+                            <div className="invalid-feedback">{messageErr}</div>
+                        </div>
+                        <button type="submit" className="btn btn-dark">Siųsti</button>
+                    </form>
                 </div>
             </div>
         </div>
     )
 }
+
+// import monicaContactImg from '../assets/monica-contact-img.png';
+// import style from '../components/ContactMe.module.css';
+// import { FaPhone, FaFacebook, FaInstagram } from 'react-icons/fa';
+
+// export function ContactMe() {
+//     return (
+//         <div className="container">
+//             <div className="row">
+//                 <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center`}>
+//                     <img src={monicaContactImg} alt="Monica" className={style.monicaImg}/>
+//                 </div>
+//                 <div className={`col-md-12 col-lg-8 mt-5 ${style.textContainer}`}>
+//                     <h2>Susisiek su manimi</h2>
+//                     <div className="d-flex mt-3">
+//                         <i className="me-2"><FaPhone /></i>
+//                         <p>+44 7000 200000</p>
+//                     </div>
+//                     {/* <div className="d-flex mt-3">
+//                         <i className="me-2"><FaEnvelope /></i>
+//                         <p>xxx@xxx.co.uk</p>
+//                     </div> */}
+//                     <div className="d-flex mt-3">
+//                         <i className="me-2"><FaFacebook /></i>
+//                         <p>Monica Empower</p>
+//                     </div>
+//                     <div className="d-flex mt-3">
+//                         <i className="me-2"><FaInstagram /></i>
+//                         <p>Monica Empower</p>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
