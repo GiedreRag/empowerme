@@ -12,11 +12,10 @@ export function Header() {
                         style={{ width: '110px', height: 'auto'}}
                     />
                 </Link>
-
                 <ul className="nav nav-pills">
-                    {/* <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">PRADĖK DABAR</Link></li> */}
                     <li className="nav-item"><Link to="/apie-mane" className="nav-link text-body-secondary">APIE MANE</Link></li>
-                    <li className="nav-item"><Link to="/" className="nav-link text-body-secondary">PRODUKTAI</Link></li>
+                    <li className="nav-item"><Link to="/produktai" className="nav-link text-body-secondary">PRODUKTAI</Link></li>
+                    <li className="nav-item"><Link to="/paketai" className="nav-link text-body-secondary">PAKETAI</Link></li>
                     <li className="nav-item"><Link to="/susisiekti" className="nav-link text-body-secondary">SUSISIEKTI</Link></li>
                 </ul>
             </header>

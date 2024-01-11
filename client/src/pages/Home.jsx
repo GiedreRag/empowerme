@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from '../components/Home.module.css';
 import style2 from '../components/Button.module.css';
 import backgroundImage from '../assets/bcg-img-big.png';
@@ -28,7 +29,8 @@ export function Home() {
                         </div>
                     </div>
                     <h4 className={`display-6 mt-2 mb-4 text-center fst-italic ${style.mainTitle}`}>ieškotojai.</h4>
-                    <button className={`mt-5 mb-4 ${style2.button}`}>PRADĖK SAVO KELIONĘ</button>
+                    <Link className={`mt-5 mb-4 ${style2.button}`} to="/paketai">PRADĖK SAVO KELIONĘ</Link>
+                    <Link className="fst-italic text-dark" to="/susisiekti">Arba susisiek dėl 30 minučių nemokamos sesijos</Link>
                     <h4 className={`mt-5 mb-4 fw-light lh-base text-center ${style.sentence}`}>"Atsikratyk pykčio ir skausmingų prisiminimų visiems laikams greitai ir neskausmingai, jog atrastum gerą savijautą ir turėtum daugiau energijos daryti tai kas svarbu gyvenime!"</h4>
                     <p className="mt-1 fst-italic">Monica Empower</p>
                 </div>
@@ -36,11 +38,7 @@ export function Home() {
                     <div className={style.backgroundDotsContainer}>
                         <img src={backgroundDots} alt="background dots" className={style.backgroundDots} />
                     </div>
-                    <img 
-                        src={monicaHomeImg}
-                        alt="Monica"
-                        className={style.monicaImage}
-                    />
+                    <img src={monicaHomeImg} alt="Monica" className={style.monicaImage} />
                 </div>
             </div>
         </div>
