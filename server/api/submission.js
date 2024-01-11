@@ -2,11 +2,12 @@ import express from 'express';
 import nodemailer from 'nodemailer';
 import { connection } from '../dbSetup.js';
 import { GMAIL_APP_PASSWORD } from '../env.js';
+import { USER_EMAIL } from '../env.js';
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'valentaite@gmail.com',
+        user: USER_EMAIL,
         pass: GMAIL_APP_PASSWORD,
     },
 });
@@ -65,7 +66,7 @@ submission.post('/', async (req, res) => {
         if (insertRes.affectedRows > 0) {
             const mailOptions = {
                 from: email,
-                to: 'valentaite@gmail.com',
+                to: USER_EMAIL,
                 subject: 'New Form Submission',
                 text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
             };

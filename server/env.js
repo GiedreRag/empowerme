@@ -13,6 +13,7 @@ export const DB_USER = e.DB_USER ?? 'root';
 export const DB_PASS = e.DB_PASS ?? '';
 export const DB_DATABASE = e.DB_DATABASE ?? '';
 export const GMAIL_APP_PASSWORD = e.GMAIL_APP_PASSWORD ?? '';
+export const USER_EMAIL = e.USER_EMAIL ?? '';
 
 export const env = {
     PROJECT_TITLE,
@@ -24,6 +25,7 @@ export const env = {
     DB_PASS,
     DB_DATABASE,
     GMAIL_APP_PASSWORD,
+    USER_EMAIL,
 };
 
 export default env;
