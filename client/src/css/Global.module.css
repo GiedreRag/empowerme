@@ -1,0 +1,48 @@
+.stickyContact {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: #4a4846;
+  color: #fff;
+  font-size: 14px;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.stickyContact:hover {
+  background-color: #a19c99;
+}
+
+@media (max-width: 768px) {
+  .stickyContact {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 530px) {
+  .stickyContact {
+    width: 90px;
+    height: 90px;
+    bottom: 15px;
+    right: 15px;
+    
+  }
+}
+
+@media (max-width: 413px) {
+  .stickyContact {
+    width: 80px;
+    height: 80px;
+    font-size: 10px;
+  }
+}

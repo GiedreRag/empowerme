@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import monicaProductsImg from '../assets/monica-products-img.jpg';
 import style from '../components/Products.module.css';
+import style3 from '../css/Global.module.css';
 
 export function Products() {
+    const handleContactClick = () => {
+        window.location.href = '/susisiekti';
+    };
+
     return (
         <div className="container">
             <div className="row">
@@ -36,8 +40,15 @@ export function Products() {
                 </div>
                 <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center text-center`}>
                     <div>
-                        <Link className="fst-italic text-dark" to="/susisiekti">Susisiek dėl 30 minučių nemokamos sesijos</Link>
                         <img src={monicaProductsImg} alt="Monica" className={style.monicaImg}/>
+                    </div>
+                    <div
+                        className={style3.stickyContact}
+                        onClick={handleContactClick}
+                        role="button"
+                        tabIndex={0}
+                    >
+                        30 minučių nemokama sesija!
                     </div>
                 </div>
             </div>

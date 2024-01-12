@@ -151,10 +151,10 @@ export function ContactMe() {
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center`}>
+                <div className={`col-sm-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center`}>
                     <img src={monicaContactImg} alt="Monica" className={style.monicaImg}/>
                 </div>
-                <div className={`col-md-12 col-lg-8 mt-2 ${style.textContainer}`}>
+                <div className={`col-sm-12 col-md-8 col-lg-8 mt-2 ${style.textContainer}`}>
                     <h3>Susisiek su manimi</h3>
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaPhone /></i>
