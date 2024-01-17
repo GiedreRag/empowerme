@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import monicaContactImg from '../assets/monica-contact-img.png';
 import style from '../components/ContactMe.module.css';
 import { FaPhone, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export function ContactMe() {
+    const { language } = useLanguage();
+    const translations = require(`../locales/${language}/translation.json`);
+
     const navigate = useNavigate();
     const [name, setName] = useState('');
     const [nameErr, setNameErr] = useState('');
@@ -141,7 +145,7 @@ export function ContactMe() {
                         }
                     }
                     if (data.status === 'ok') {
-                        return navigate('/');
+                        return navigate('/susisiekti');
                     }
                 })
                 .catch(err => console.error(err));
@@ -155,7 +159,7 @@ export function ContactMe() {
                     <img src={monicaContactImg} alt="Monica" className={style.monicaImg}/>
                 </div>
                 <div className={`col-sm-12 col-md-8 col-lg-8 mt-2 ${style.textContainer}`}>
-                    <h3>Susisiek su manimi</h3>
+                    <h3>{translations.contact_me}</h3>
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaPhone /></i>
                         <p>+44 7000 20000</p>
@@ -168,10 +172,10 @@ export function ContactMe() {
                         <i className="me-2 mb-5"><FaInstagram /></i>
                         <p>Monica Empower</p>
                     </div>
-                    <h5>Arba parašyk žinutę apačioje</h5>
+                    <h5>{translations.write_message}</h5>
                     <form onSubmit={submitHandler}>
                         <div className="mb-3">
-                            <label htmlFor="name" className="form-label">Vardas</label>
+                            <label htmlFor="name" className="form-label">{translations.name}</label>
                             <input 
                                 type="text"
                                 className={`form-control ${nameErr ? 'is-invalid' : ''} ${nameValid ? 'is-valid' : ''}`}
@@ -185,7 +189,7 @@ export function ContactMe() {
                             <div className="invalid-feedback">{nameErr}</div>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="email" className="form-label"> El. paštas</label>
+                            <label htmlFor="email" className="form-label">{translations.email}</label>
                             <input 
                                 type="email"
                                 className={`form-control ${emailErr ? 'is-invalid' : ''} ${emailValid ? 'is-valid' : ''}`}
@@ -199,7 +203,7 @@ export function ContactMe() {
                             <div className="invalid-feedback">{emailErr}</div>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="message" className="form-label">Žinutė</label>
+                            <label htmlFor="message" className="form-label">{translations.message}</label>
                             <textarea 
                                 className={`form-control ${messageErr ? 'is-invalid' : ''} ${messageValid ? 'is-valid' : ''}`}
                                 id="message"
@@ -211,7 +215,7 @@ export function ContactMe() {
                             />
                             <div className="invalid-feedback">{messageErr}</div>
                         </div>
-                        <button type="submit" className="btn btn-dark">Siųsti</button>
+                        <button type="submit" className="btn btn-dark">{translations.send}</button>
                     </form>
                 </div>
             </div>
