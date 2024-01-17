@@ -1,43 +1,31 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import monicaAboutImg from '../assets/monica-about-img.jpg';
 import style from '../components/AboutMe.module.css';
 import style3 from '../css/Global.module.css';
 
 export function AboutMe() {
+    const { language } = useLanguage();
+    const translations = require(`../locales/${language}/translation.json`);
+
     const handleContactClick = () => {
-        window.location.href = '/susisiekti';
+        window.location.href = `/${language}/susisiekti`;
     };
+
+    const aboutMeContent = translations.about_me.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+            {line}
+            <br />
+        </React.Fragment>
+    ));
 
     return (
         <div className="container">
             <div className="row">
                 <div className={`col-md-12 col-lg-8 mt-5 ${style.textContainer}`}>
-                    <p>Labas!</p>
-                    <p>
-                        Esu Monika, seniau jaučiausi atstumta, nepripažinta savo tėčio. Viduje laikiau užspausdus
-                        skausmingus prisiminimus ir pyktį jam. Rezultate tapau irzli, pyktį sukeldavo maži dalykai, į
-                        gyvenima pritraukdavau žmones ir situacijas kuriose klausdavau Kodėl man taip vyksta?
-                    </p>
-                    <p>
-                        Vieną dieną aš supratau jog turiu surasti būdą kaip jam atleisti ir išsivaduoti iš nuoskaudų
-                        skausmo savo tėčiui, nes tas pyktis griauna santykį su pačia manimi, artimais ir atima mano gerą
-                        savijautą ir energiją.
-                    </p>
-                    <p>
-                        Kai pajutau dėkingumą su ašaromis akyse savo tėčiui už ką laikiau pyktį, pamačius įvykių
-                        prasmę, aš priėmiau jį besąlygiškai, bet tuo pat metu aš priėmiau ir pačią save, išsivadavau iš
-                        neteisybės skausmo, pykčio, kaltinimo, kaltės, vietoj to atsirado suvokimas, kad viskas turi
-                        prasmę, kad vyksta dėl manes ir aš pati kuriu savo gyvenimą. Atsirado dar daugiau geros
-                        savijautos ir energijos daryti tai kas svarbu gyvenime .
-                    </p>
-                    <p>
-                        Šiai dienai tai padeda priimti save, kitus žmones ir kurti prasmingus santykius. Iš gyvenimo
-                        dingo situacijos kurios keldavo klausimus “kodėl man?”. Jaučiu dvasinės prabangos–harmonijos ir įkvėpimo kaip niekados gyvenime.
-                    </p>
+                    <p>{aboutMeContent}</p>
                     <p className="fw-bolder">
-                        Todėl aš šiandien jaučiuosi pašaukta tuo dalintis su tavimi, savo įgūdžiais, metodais ir įrankiais,
-                        kad patirtum kaip žmogus gali jaustis ir turėti geros savijautos bei energijos atsikratant to kas
-                        slegia.
+                        {translations.about_me_extra_text}
                     </p>
                     <div
                         className={style3.stickyContact}
