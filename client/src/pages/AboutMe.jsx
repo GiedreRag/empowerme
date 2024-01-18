@@ -33,7 +33,7 @@ export function AboutMe() {
                         role="button"
                         tabIndex={0}
                     >
-                        30 minučių nemokama sesija!
+                        {translations.free_session}
                     </div>
                 </div>
                 <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center`}>
