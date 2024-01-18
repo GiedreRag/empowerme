@@ -20,5 +20,6 @@
     "email": "El. paštas",
     "message": "Žinutė",
     "send": "Siųsti",
+    "message_sent": "Žinutė sėkmingai išsiųsta",
     "not_found_page": "Puslapis nerastas"
 }

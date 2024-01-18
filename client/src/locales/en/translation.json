@@ -20,5 +20,6 @@
     "email": "Email",
     "message": "Message",
     "send": "Send",
+    "message_sent": "Message successfully sent",
     "not_found_page": "Page not found"
 }
