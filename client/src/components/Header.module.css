@@ -2,3 +2,85 @@
     background-color: #dcdbd9;
     width: 100%;
 }
+
+.burgerMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: #585757;
+    transition: color 0.3s ease;
+}
+
+.burgerMenuButton:hover {
+    color: #050505;
+}
+
+.headerMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.headerMenu a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.headerMenu a:hover {
+    color: #050505 !important;
+}
+
+.menuVisible {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.menuVisible a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.menuVisible a:hover {
+    color: #050505 !important;
+}
+
+@media (max-width: 790px) {
+    .smallScreen {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .headerMenu {
+        display: none;
+    }
+
+    .burgerMenuButton {
+        display: block;
+    }
+} 
