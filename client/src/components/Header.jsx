@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from '../components/Header.module.css';
 import { LanguageToggle } from './LanguageToggle';
 import { useLanguage } from '../context/LanguageContext';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 export function Header() {
     const { language } = useLanguage();
@@ -18,6 +18,19 @@ export function Header() {
     const closeMenu = () => {
         setMenuVisible(false);
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 790) {
+                setMenuVisible(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <div className={style.headerContainer}>
@@ -37,7 +50,7 @@ export function Header() {
                 </nav>
                 <div className={style.smallScreen}>
                     <button className={`${style.burgerMenuButton} ${menuVisible ? style.active : ''}`} onClick={toggleMenu}>
-                        <i className="d-flex"><FaBars /></i>
+                        {menuVisible ? <i className="d-flex"><FaTimes /></i> : <i className="d-flex"><FaBars /></i>}
                     </button>
                     {menuVisible && (
                         <nav className={`${style.menuVisible}`}>

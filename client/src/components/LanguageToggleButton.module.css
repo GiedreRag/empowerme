@@ -1,0 +1,14 @@
+.button {
+    background-color: transparent;
+    /* border: none; */
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button.selected {
+    color: #585757;
+}
+
+.button:not(.selected) {
+    color: white;
+}
