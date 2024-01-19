@@ -1,17 +1,14 @@
 import React from 'react';
 import monicaProductsImg from '../assets/monica-products-img.jpg';
 import style from '../components/Products.module.css';
-import style3 from '../css/Global.module.css';
+import StickyContactMessage from '../components/StickyContactMessage';
 
 export function Products() {
-    const handleContactClick = () => {
-        window.location.href = '/susisiekti';
-    };
 
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-md-12 col-lg-8 mt-5 ${style.textContainer}`}>
+                <div className={`col-md-12 col-lg-8 mt-4 ${style.textContainer}`}>
                     <h4 className="mb-3">Produktai</h4>
                     <p>
                         Aš tikiu, kad tavo sėkmė gyvenime gali būti atrasta per programą vadinamą NAUJAS BŪDAS MYLĖTI - tai unikali, 100% efektyvi ir mokslu paremta sistema padėsianti tau atsikratyti pykčio, skausmingų praeities prisiminimų visiems laikams ir turėti daugiau energijos daryti tai kas svarbu gyvenime.
@@ -42,14 +39,7 @@ export function Products() {
                     <div>
                         <img src={monicaProductsImg} alt="Monica" className={style.monicaImg}/>
                     </div>
-                    <div
-                        className={style3.stickyContact}
-                        onClick={handleContactClick}
-                        role="button"
-                        tabIndex={0}
-                    >
-                        30 minučių nemokama sesija!
-                    </div>
+                    <StickyContactMessage />
                 </div>
             </div>
         </div>

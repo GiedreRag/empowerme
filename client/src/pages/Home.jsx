@@ -7,16 +7,12 @@ import backgroundImage from '../assets/bcg-img-big.png';
 import backgroundImage2 from '../assets/bcg2-img-big.png';
 import backgroundDots from '../assets/bcg-img-small.png';
 import monicaHomeImg from '../assets/monica-home-img.png';
-import style3 from '../css/Global.module.css';
+import StickyContactMessage from '../components/StickyContactMessage';
 
 export function Home() {
     const { language } = useLanguage();
 
     const translations = require(`../locales/${language}/translation.json`);
-
-    const handleContactClick = () => {
-        window.location.href = `/susisiekti`;
-    };
       
     return (
         <div className="container">
@@ -40,14 +36,7 @@ export function Home() {
                     </div>
                     <h4 className={`display-6 mt-2 mb-4 text-center fst-italic ${style.mainTitle}`}>{translations.searchers}</h4>
                     <Link className={`mt-5 mb-4 ${style2.button}`} to="/paketai">{translations.start_journey}</Link>
-                    <div
-                        className={style3.stickyContact}
-                        onClick={handleContactClick}
-                        role="button"
-                        tabIndex={0}
-                    >
-                        {translations.free_session}
-                    </div>
+                    <StickyContactMessage />
                     <h4 className={`mt-5 mb-4 fw-light lh-base text-center ${style.sentence}`}>{translations.quote}</h4>
                     <p className="mt-1 fst-italic">{translations.monica_empower}</p>
                     

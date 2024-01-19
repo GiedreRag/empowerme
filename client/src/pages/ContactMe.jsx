@@ -165,7 +165,8 @@ export function ContactMe() {
                     <img src={monicaContactImg} alt="Monica" className={style.monicaImg}/>
                 </div>
                 <div className={`col-sm-12 col-md-8 col-lg-8 mt-2 ${style.textContainer}`}>
-                    <h3>{translations.contact_me}</h3>
+                    <h5 className="me-3">{translations.contact_me_sentence}</h5>
+                    {/* <h5>{translations.contact_me}</h5> */}
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaPhone /></i>
                         <p>+44 7000 20000</p>

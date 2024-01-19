@@ -1,9 +1,6 @@
-import style3 from '../css/Global.module.css';
+import StickyContactMessage from '../components/StickyContactMessage';
 
 export function Packages() {
-    const handleContactClick = () => {
-        window.location.href = '/susisiekti';
-    };
 
     return (
         <main>
@@ -61,14 +58,7 @@ export function Packages() {
                         </div>
                     </div>
                 </div>
-                <div
-                    className={style3.stickyContact}
-                    onClick={handleContactClick}
-                    role="button"
-                    tabIndex={0}
-                >
-                    30 minučių nemokama sesija!
-                </div>
+                <StickyContactMessage />
             </div>
         </main>
     )
