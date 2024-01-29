@@ -18,14 +18,14 @@ export function AboutMe() {
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-md-12 col-lg-8 mt-4 ${style.textContainer}`}>
+                <div className={`col-lg-12 col-xl-8 mt-4 ${style.textContainer}`}>
                     <p>{aboutMeContent}</p>
                     <p className="fw-bolder">
                         {translations.about_me_extra_text}
                     </p>
                     <StickyContactMessage />
                 </div>
-                <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center`}>
+                <div className={`col-lg-12 col-xl-4 d-flex align-items-center justify-content-center`}>
                     <img src={monicaAboutImg} alt="Monica" className={style.monicaImg}/>
                 </div>
             </div>

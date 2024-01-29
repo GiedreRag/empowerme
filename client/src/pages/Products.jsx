@@ -8,7 +8,7 @@ export function Products() {
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-md-12 col-lg-8 mt-4 ${style.textContainer}`}>
+                <div className={`col-sm-12 col-xl-7 mt-4 ${style.textContainer}`}>
                     <h4 className="mb-3">Produktai</h4>
                     <p>
                         Aš tikiu, kad tavo sėkmė gyvenime gali būti atrasta per programą vadinamą NAUJAS BŪDAS MYLĖTI - tai unikali, 100% efektyvi ir mokslu paremta sistema padėsianti tau atsikratyti pykčio, skausmingų praeities prisiminimų visiems laikams ir turėti daugiau energijos daryti tai kas svarbu gyvenime.
@@ -35,7 +35,7 @@ export function Products() {
                        Dirbant su savo protu jūs jausite daugiau energijos ir geros savijautos pokytį savo kūne jau po pirmos sesijos, o didžiausi pokyčiai išorėję bus pastebimi po 3 mėnesių.
                     </p>
                 </div>
-                <div className={`col-md-12 col-lg-4 d-flex align-items-center justify-content-center text-center`}>
+                <div className={`col-sm-12 col-xl-5 ps-xl-5 d-flex align-items-center justify-content-center text-center`}>
                     <div>
                         <img src={monicaProductsImg} alt="Monica" className={style.monicaImg}/>
                     </div>

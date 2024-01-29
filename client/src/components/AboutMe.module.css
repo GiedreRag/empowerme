@@ -6,6 +6,12 @@
     font-size: 18px;
 }
 
+@media (max-width: 1198px) {
+    .monicaImg {
+        width: 50%;
+    }
+}
+
 @media (max-width: 992px) {
     .monicaImg {
         width: 60%;
