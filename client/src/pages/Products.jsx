@@ -1,38 +1,42 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import monicaProductsImg from '../assets/monica-products-img.jpg';
 import style from '../components/Products.module.css';
 import StickyContactMessage from '../components/StickyContactMessage';
 
 export function Products() {
+    const { language } = useLanguage();
+
+    const translations = require(`../locales/${language}/translation.json`);
 
     return (
         <div className="container">
             <div className="row">
                 <div className={`col-sm-12 col-xl-7 mt-4 ${style.textContainer}`}>
-                    <h4 className="mb-3">Produktai</h4>
+                    <h4 className="mb-3">{translations.products_title}</h4>
                     <p>
-                        Aš tikiu, kad tavo sėkmė gyvenime gali būti atrasta per programą vadinamą NAUJAS BŪDAS MYLĖTI - tai unikali, 100% efektyvi ir mokslu paremta sistema padėsianti tau atsikratyti pykčio, skausmingų praeities prisiminimų visiems laikams ir turėti daugiau energijos daryti tai kas svarbu gyvenime.
+                        {translations.products_p1}
                     </p>
                     <p className="fw-bolder">
-                        Ši sistema yra unikali ir efektyvi, nes naudoju šiuos žingsnius:
+                        {translations.products_p2}
                     </p>
                     <p>
-                        - Remiantis BALANSO dėsniu, jog viskas gyvenime turi priešingas puses: karštis-šaltis, diena-naktis, pliusas-minusas ir t.t. Mes sugrąžinam tavo SUVOKIMĄ Į BALANSĄ to ivykio metu. T.y. prie neigiamo įvykio pusės pridedame teigiamą pusę, surandant kaip tas skausmingas įvykis buvo tau tiek pat naudingas kiek ir žalingas, kokią naudą Tau jis davė nuo tada iki dabar.
+                        {translations.products_p3}
                     </p>
                     <p>
-                        Pamatant užslėptą įvykių dinamiką ir prasmę, kurių anksčiau nematei, kaip tas įvykis tau buvo tiek pat žalingas, pajaučiant dėkingumą ir atviros širdies jausmą, priekaištų nebelieka, tik noras padėkoti už tą patirtį.
+                        {translations.products_p4}
                     </p>
                     <p>
-                        - Tik subalansavus tavo ANTIATMINTĮ (pagal Oksfordo universiteto mokslininkus - kiekvienas emočiškai sukeltas įvykis turi užstrigusią fantaziją, o kaip aš norėjau, kad būtų) tu išsilaisvinsi iš emocijų ir skausmingų prisiminimų visiems laikams bei atrasi tau užslėptą dovaną - gerą savijautą ir energiją.
+                        {translations.products_p5}
                     </p>
                     <p className="fw-bolder">
-                       Daugybė žmonių jau išbandė šią programą ir džiaugiasi rezultatais. 
+                        {translations.products_p6}
                     </p>
                     <p className="fw-bolder">
-                       Prisijunk ir tu, nes gyventi su tuo visą gyvenimą yra daug sunkiau, tai atima energiją, sveikatą ir gadina santykį su savimi bei artimaisiais. 
+                        {translations.products_p7} 
                     </p>
                     <p className="fw-bolder">
-                       Dirbant su savo protu jūs jausite daugiau energijos ir geros savijautos pokytį savo kūne jau po pirmos sesijos, o didžiausi pokyčiai išorėję bus pastebimi po 3 mėnesių.
+                        {translations.products_p8}
                     </p>
                 </div>
                 <div className={`col-sm-12 col-xl-5 ps-xl-5 d-flex align-items-center justify-content-center text-center`}>
