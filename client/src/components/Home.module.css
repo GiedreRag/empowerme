@@ -204,9 +204,13 @@
     }
 }
 
-@media (max-width: 515px) {
+@media (max-width: 576px) {
     .backgroundDots {
         width: 130%;
+    }
+
+    .mainTitle {
+        margin-top: 20px;
     }
     .sentence {
         font-size: 16px;

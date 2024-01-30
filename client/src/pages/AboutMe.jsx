@@ -18,9 +18,9 @@ export function AboutMe() {
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-lg-12 col-xl-8 mt-4 ${style.textContainer}`}>
-                    <p>{aboutMeContent}</p>
-                    <p className="fw-bolder">
+                <div className={`col-lg-12 col-xl-8 mt-2 ${style.textContainer}`}>
+                    <p className={style.text}>{aboutMeContent}</p>
+                    <p className={`fw-bolder ${style.text}`}>
                         {translations.about_me_extra_text}
                     </p>
                     <StickyContactMessage />

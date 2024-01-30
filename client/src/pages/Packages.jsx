@@ -21,10 +21,10 @@ export function Packages() {
                                 <div className="card-body">
                                     <h1 className="card-title pricing-card-title mb-4">€1,988</h1>
                                     <ul className="list-unstyled m-lg-4">
-                                        <li class="mb-4">{translations.packages_sum_1_1}</li>
-                                        <li class="mb-4">{translations.packages_sum_1_2}</li>
-                                        <li class="mb-4">{translations.packages_sum_1_3}</li>
-                                        <li class="mb-5">{translations.packages_sum_1_4}</li>
+                                        <li className="mb-4">{translations.packages_sum_1_1}</li>
+                                        <li className="mb-4">{translations.packages_sum_1_2}</li>
+                                        <li className="mb-4">{translations.packages_sum_1_3}</li>
+                                        <li className="mb-5">{translations.packages_sum_1_4}</li>
                                     </ul>
                                     <p>
                                     {translations.packages_more} {' '}

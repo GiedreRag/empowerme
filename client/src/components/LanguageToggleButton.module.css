@@ -6,9 +6,9 @@
 }
 
 .button.selected {
-    color: #585757;
+    color: #ffff;
 }
 
 .button:not(.selected) {
-    color: white;
+    color: #585757;
 }
