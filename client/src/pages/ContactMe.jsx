@@ -150,8 +150,14 @@ export function ContactMe() {
                         setName('');
                         setEmail('');
                         setMessage('');
+                        setNameErr('');
+                        setEmailErr('');
+                        setMessageErr('');
+                        setNameValid(false);
+                        setEmailValid(false);
+                        setMessageValid(false);
                         setShowSuccessMessage(true);
-                        return navigate('/susisiekti');
+                        return navigate('/contact');
                     }
                 })
                 .catch(err => console.error(err));
@@ -161,7 +167,7 @@ export function ContactMe() {
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-sm-12 col-lg-6 col-xl-8 p-lg-4 mb-2 ${style.textContainer}`}>
+                <div className={`col-sm-12 col-lg-6 col-xl-8 p-lg-3 mb-2 ${style.textContainer}`}>
                     <h5 className="mb-4">{translations.contact_me_sentence}</h5>
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaPhone /></i>
@@ -177,7 +183,7 @@ export function ContactMe() {
                     </div>
                     <h5>{translations.write_message}</h5>
                     <form onSubmit={submitHandler}>
-                        <div className="mb-3">
+                        <div className="mb-3 mt-3">
                             <label htmlFor="name" className="form-label">{translations.name}</label>
                             <input 
                                 type="text"
@@ -224,7 +230,7 @@ export function ContactMe() {
                         <SuccessMessage onClose={() => setShowSuccessMessage(false)} />
                     )}
                 </div>
-                <div className={`col-sm-12 col-lg-6 col-xl-4 d-flex align-items-center justify-content-center`}>
+                <div className={`col-sm-12 col-lg-6 col-xl-4 mt-4 d-flex align-items-center justify-content-center`}>
                     <img src={monicaContactImg} alt="Monica" className={style.monicaImg}/>
                 </div>
             </div>

@@ -12,7 +12,7 @@ export function Products() {
     return (
         <div className="container">
             <div className="row">
-                <div className={`col-sm-12 col-xl-7 mt-4 ${style.textContainer}`}>
+                <div className={`col-sm-12 col-xl-7 mt-2 ${style.textContainer}`}>
                     <h4 className="mb-3">{translations.products_title}</h4>
                     <p>
                         {translations.products_p1}
