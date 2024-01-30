@@ -7,7 +7,7 @@ const StickyContactMessage = () => {
     const translations = require(`../locales/${language}/translation.json`);
 
     const handleContactClick = () => {
-        window.location.href = `/susisiekti`;
+        window.location.href = `/contact`;
     };
 
     return (

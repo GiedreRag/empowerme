@@ -15,10 +15,10 @@ function App() {
         <Routes>
           <Route Component={PublicLayout}>
             <Route index path='/' element={<Home />} />
-            <Route path='/apie-mane' element={<AboutMe />} />
-            <Route path='/produktai' element={<Products />} />
-            <Route path='/paketai' element={<Packages />} />
-            <Route path='/susisiekti' element={<ContactMe />} />
+            <Route path='/about-me' element={<AboutMe />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/packages' element={<Packages />} />
+            <Route path='/contact' element={<ContactMe />} />
           </Route>
           <Route Component={PublicLayout}>
             <Route path='*' element={<Page404 />}></Route>
