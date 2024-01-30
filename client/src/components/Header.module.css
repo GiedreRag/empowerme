@@ -39,6 +39,7 @@
 
 .headerMenu a:hover {
     color: #050505 !important;
+    text-decoration: underline;
 }
 
 .menuVisible {
@@ -67,6 +68,7 @@
 
 .menuVisible a:hover {
     color: #050505 !important;
+    text-decoration: underline;
 }
 
 @media (max-width: 790px) {
