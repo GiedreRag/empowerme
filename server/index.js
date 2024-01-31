@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import { SERVER_PORT } from './env.js';
 import { api } from './api/api.js';
+// import path from 'path';
 
 const app = express();
 
@@ -23,6 +24,10 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.disable('x-powered-by');
+
+// app.get('/site.webmanifest', (_req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'Favicon', 'site.webmanifest'));
+// });
 
 app.use(express.static('public'));
 
