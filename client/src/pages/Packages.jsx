@@ -32,8 +32,6 @@ export function Packages() {
                                             bookretreats.com
                                         </a>
                                     </p>
-                                    {/* <button type="button" className="w-30 btn btn-lg btn-outline-dark me-2">Daugiau informacijos</button> */}
-                                    {/* <button type="button" className="w-30 btn btn-lg btn-outline-dark">Pirkti</button> */}
                                 </div>
                                 <div className="p-xl-4 d-flex align-items-center justify-content-center text-center">
                                     <img src={spaImg} alt="Spa" className={style.spaImg}/>
