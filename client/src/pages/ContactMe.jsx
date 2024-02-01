@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import monicaContactImg from '../assets/monica-contact-img.png';
 import style from '../components/ContactMe.module.css';
-import { FaPhone, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import SuccessMessage from '../components/SuccessMessage';
 
 export function ContactMe() {
@@ -168,11 +168,17 @@ export function ContactMe() {
         <div className="container">
             <div className="row">
                 <div className={`col-sm-12 col-lg-6 col-xl-8 p-lg-3 mb-2 ${style.textContainer}`}>
-                    <h5 className="mb-4">{translations.contact_me_sentence}</h5>
-                    <div className="d-flex mt-3">
+                    {/* <div className="d-flex mt-3">
                         <i className="me-2"><FaPhone /></i>
                         <p>+44 7000 20000</p>
-                    </div>
+                    </div> */}
+                    {/* <h5 className="mb-2">{translations.contact_me_free_session}</h5> */}
+                    <h6 className="mb-4">{translations.contact_me_free_session} {' '}
+                        <a href="https://calendly.com/monika-empower-me/30min" target="_blank" rel="noopener noreferrer">
+                            calendly.com
+                        </a>
+                    </h6>
+                    <h5 className="mb-4">{translations.contact_me}</h5>
                     <div className="d-flex mt-3">
                         <i className="me-2"><FaFacebook /></i>
                         <p>Monica Empower</p>
@@ -181,6 +187,12 @@ export function ContactMe() {
                         <i className="me-2 mb-5"><FaInstagram /></i>
                         <p>Monica Empower</p>
                     </div>
+                    {/* <h5 className="mb-2">{translations.contact_me_free_session}</h5>
+                    <h6 className="mb-5">{translations.contact_me_free_session_link} {' '}
+                        <a href="https://calendly.com/monika-empower-me/30min" target="_blank" rel="noopener noreferrer">
+                            calendly.com
+                        </a>
+                    </h6> */}
                     <h5>{translations.write_message}</h5>
                     <form onSubmit={submitHandler}>
                         <div className="mb-3 mt-3">

@@ -19,7 +19,7 @@ export function Packages() {
                             </div>
                             <div className="row row-cols-1 row-cols-lg-2 p-3">
                                 <div className="card-body">
-                                    <h1 className="card-title pricing-card-title mb-4">€1,988</h1>
+                                    <h2 className="card-title pricing-card-title mb-4 mt-lg-3">£ 1,988</h2>
                                     <ul className="list-unstyled m-lg-4">
                                         <li className="mb-4">{translations.packages_sum_1_1}</li>
                                         <li className="mb-4">{translations.packages_sum_1_2}</li>
@@ -35,7 +35,7 @@ export function Packages() {
                                     {/* <button type="button" className="w-30 btn btn-lg btn-outline-dark me-2">Daugiau informacijos</button> */}
                                     {/* <button type="button" className="w-30 btn btn-lg btn-outline-dark">Pirkti</button> */}
                                 </div>
-                                <div className="p-xl-5 d-flex align-items-center justify-content-center text-center">
+                                <div className="p-xl-4 d-flex align-items-center justify-content-center text-center">
                                     <img src={spaImg} alt="Spa" className={style.spaImg}/>
                                 </div>
                             </div>
