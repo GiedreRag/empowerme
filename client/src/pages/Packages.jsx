@@ -19,7 +19,7 @@ export function Packages() {
                             </div>
                             <div className="row row-cols-1 row-cols-lg-2 p-3">
                                 <div className="card-body">
-                                    <h2 className="card-title pricing-card-title mb-4 mt-lg-3">£ 1,988</h2>
+                                    <h2 className="card-title pricing-card-title mb-4 mt-lg-3">£ 1,699</h2>
                                     <ul className="list-unstyled m-lg-4">
                                         <li className="mb-4">{translations.packages_sum_1_1}</li>
                                         <li className="mb-4">{translations.packages_sum_1_2}</li>
