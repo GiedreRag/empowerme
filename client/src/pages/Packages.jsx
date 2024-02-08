@@ -26,12 +26,8 @@ export function Packages() {
                                         <li className="mb-4">{translations.packages_sum_1_3}</li>
                                         <li className="mb-5">{translations.packages_sum_1_4}</li>
                                     </ul>
-                                    <p>
-                                    {translations.packages_more} {' '}
-                                        <a href="https://bookretreats.com/r/3-day-1-to-1-transformational-retreat-in-london-uk" target="_blank" rel="noopener noreferrer">
-                                            bookretreats.com
-                                        </a>
-                                    </p>
+                                    <button type="button" className="btn btn-outline-secondary btn-sm px-4 me-3 mb-3">{translations.packages_more}</button>
+                                    <button type="button" className="btn btn-outline-secondary btn-sm px-4 mb-3">{translations.packages_contact}</button>
                                 </div>
                                 <div className="p-xl-4 d-flex align-items-center justify-content-center text-center">
                                     <img src={spaImg} alt="Spa" className={style.spaImg}/>
