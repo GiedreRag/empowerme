@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import StickyContactMessage from '../components/StickyContactMessage';
 import { useLanguage } from '../context/LanguageContext';
 import spaImg from '../assets/emp.spa.jpg';
@@ -26,8 +27,8 @@ export function Packages() {
                                         <li className="mb-4">{translations.packages_sum_1_3}</li>
                                         <li className="mb-5">{translations.packages_sum_1_4}</li>
                                     </ul>
-                                    <button type="button" className="btn btn-outline-secondary btn-sm px-4 me-3 mb-3">{translations.packages_more}</button>
-                                    <button type="button" className="btn btn-outline-secondary btn-sm px-4 mb-3">{translations.packages_contact}</button>
+                                    {/* <button type="button" className="btn btn-outline-secondary btn-sm px-4 me-3 mb-3">{translations.packages_more}</button> */}
+                                    <NavLink to="/contact" type="button" className="btn btn-outline-secondary btn-sm px-2 mb-3">{translations.packages_contact}</NavLink>
                                 </div>
                                 <div className="p-xl-4 d-flex align-items-center justify-content-center text-center">
                                     <img src={spaImg} alt="Spa" className={style.spaImg}/>
